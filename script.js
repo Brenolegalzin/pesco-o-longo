@@ -3,12 +3,12 @@ let quant = "\n|";
 let score = 0;
 document.onscroll = function(){
 	document.querySelector("#score").style.top = window.scrollY;
-}
-document.onscrollend = function(){
-	score += 5;
-	quant = quant+"\n|"
-	document.getElementById("score").innerText = "Pontos :"+score
-	for(let i=0;i<=400; i++){
-		document.getElementById("imagem").innerText = "--------\n   |   |  \n _____ \n________  \n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|"+quant;
+	if(window.scrollY>=document.querySelector("html").clientHeight){
+		score += 5;
+		quant = quant+"\n|"
+		document.getElementById("score").innerText = "Pontos :"+score
+		for(let i=0;i<=400; i++){
+			document.getElementById("imagem").innerText = "--------\n   |   |  \n _____ \n________  \n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|"+quant;
+		}
 	}
-}
+};
